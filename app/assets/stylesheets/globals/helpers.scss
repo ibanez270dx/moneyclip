@@ -1,0 +1,10 @@
+
+@mixin scaled-background($image) {
+  @include media(new-breakpoint(min-width 2561px)) { background-image: url(asset-path("#{$image}-3520x1980.jpg")); }
+  @include media(new-breakpoint(min-width 2049px max-width 2560px)) { background-image: url(asset-path("#{$image}-2560x1440.jpg")); }
+  @include media(new-breakpoint(min-width 1921px max-width 2048px)) { background-image: url(asset-path("#{$image}-2048x1152.jpg")); }
+  @include media(new-breakpoint(min-width 1601px max-width 1920px)) { background-image: url(asset-path("#{$image}-1920x1080.jpg")); }
+  @include media(new-breakpoint(min-width 1366px max-width 1600px)) { background-image: url(asset-path("#{$image}-1600x900.jpg")); }
+  @include media(new-breakpoint(min-width 1281px max-width 1365px)) { background-image: url(asset-path("#{$image}-1365x768.jpg")); }
+  @include media(new-breakpoint(min-width 1px max-width 1280px)) { background-image: url(asset-path("#{$image}-1280x720.jpg")); }
+}
