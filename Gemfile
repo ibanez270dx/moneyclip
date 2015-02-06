@@ -8,26 +8,28 @@ gem 'rails', '4.2.0'
 gem 'mysql2'
 gem 'jquery-rails'
 
-group :assets do
-  # Stylesheets
-  gem 'sass-rails', '~> 5.0'
-  gem 'bourbon'
-  gem 'neat'
+# Stylesheets
+gem 'sass-rails'
+gem 'bourbon'
+gem 'neat'
 
-  # Javascript
-  gem 'coffee-rails', '~> 4.1.0'
-  gem 'uglifier', '>= 1.3.0'
-  gem 'therubyracer', platforms: :ruby
+# Javascript
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'therubyracer', platforms: :ruby
+
+#################################################
+# Environments
+#################################################
+
+group :production do
+  gem 'unicorn'
 end
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-end
-
-group :production do
-  gem 'unicorn'
 end
 
 #################################################
