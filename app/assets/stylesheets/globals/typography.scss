@@ -1,0 +1,9 @@
+html {
+  font-family: $helvetica;
+  font-size: $base-font-size;
+  text-rendering: optimizeLegibility;
+
+  @include media($mobile) {
+    font-size: $mobile-font-size;
+  }
+}
