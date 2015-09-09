@@ -9,8 +9,6 @@ $mobile-font-size: 12px;
 // Images
 $hero-image: 'time-money';
 
-// url(asset-path('time-money.jpg'));
-
 // Responsive breakpoints
 @import "neat-helpers";
 $tiny: new-breakpoint(max-width 450px);

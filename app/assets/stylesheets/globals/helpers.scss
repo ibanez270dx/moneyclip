@@ -8,3 +8,8 @@
   @include media(new-breakpoint(min-width 1281px max-width 1365px)) { background-image: url(asset-path("#{$image}-1365x768.jpg")); }
   @include media(new-breakpoint(min-width 1px max-width 1280px)) { background-image: url(asset-path("#{$image}-1280x720.jpg")); }
 }
+
+@mixin container() {
+  margin: auto;
+  width: 85%;
+}

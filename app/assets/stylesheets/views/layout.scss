@@ -1,0 +1,73 @@
+body {
+  // background-color: #3d424f;
+  background: url(http://subtlepatterns.com/patterns/paper_fibers.png);
+}
+
+header {
+  background-color: #00b47b;
+
+  nav {
+    @include container();
+
+    div {
+      @include display(flex);
+      @include align-items(center);
+      &.right {
+        float: right;
+      }
+      a {
+        transition: all 0.3s;
+
+        &.brand {
+          margin-right: 15px;
+          font-family: 'Courgette', cursive;
+          font-size: 2em;
+          color: #fff;
+        }
+        &:not(.brand) {
+          padding: 1.25em;
+          color: rgba(0,0,0,0.4);
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            background-color: rgba(0,0,0,0.1);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  #flash {
+    @include display(flex);
+    @include position(absolute, -110px 0 null 0);
+    @include align-items(center);
+    @include justify-content(center);
+    padding-top: 42px;
+    height: 100px;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.54);
+    transition: all 0.2s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    &.error {
+      background-color: rgba(255, 48, 30, 0.75);
+      color: #fff;
+    }
+    &.notice .message {
+      text-shadow: 0px 0px 5px rgba(255,255,255,0.7);
+    }
+
+    .message {
+      @include container();
+      text-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+    }
+  }
+
+  &.show-message {
+    nav { -webkit-filter: blur(4px); }
+    #flash { top: -42px; }
+  }
+}
+
+main {
+  @include container();
+  padding-top: 2em;
+}

@@ -1,0 +1,13 @@
+<%= form_for :user, url: login_path, html: { id: 'login-form' } do |f| %>
+  <div class="form-item">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="form-item">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="form-item">
+    <%= f.submit "log in" %>
+  </div>
+<% end %>

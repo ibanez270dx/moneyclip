@@ -9,7 +9,42 @@
   </head>
   <body class="<%= "#{controller.controller_path.split('/').join(' ')} #{controller.action_name.gsub(/_/, '-')}" %>">
 
-    <%= yield %>
+    <header class="<%= "show-message" unless flash.empty? %>">
+      <nav>
+        <div class="right">
+          <% if current_user %>
+            <%= link_to current_user.name, user_settings_path %>
+          <% else %>
+            <%= link_to "Sign up!", signup_path, class: 'cta' %>
+            <%= link_to "Login", login_path %>
+          <% end %>
+        </div>
+        <div class="left">
+          <%= link_to "MoneyClip.io", dashboard_path, class: 'brand' %>
+          <% if current_user %>
+            <%= link_to "dashboard", dashboard_path %>
+            <%= link_to "accounts", accounts_path %>
+          <% else %>
+            <%= link_to "Features", "#" %>
+          <% end %>
+        </div>
+      </nav>
+
+
+      <% unless flash.empty? %>
+        <div id="flash" class="<%= flash.to_hash.keys[0] %>">
+          <div class="message">
+            <%= flash.to_hash.values[0] %>
+          </div>
+        </div>
+      <% end %>
+    </header>
+
+
+    <main>
+      <%= yield %>
+    </main>
+
 
   </body>
 </html>

@@ -4,5 +4,10 @@
 @import 'globals/variables';
 @import 'globals/typography';
 @import 'globals/helpers';
+@import 'globals/forms';
 
+@import 'views/layout';
+@import 'views/dashboard';
 @import 'views/site';
+@import 'views/users';
+@import 'views/landing';
